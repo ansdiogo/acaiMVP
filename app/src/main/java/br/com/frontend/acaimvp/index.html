@@ -1,0 +1,95 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+<link href="new.css" rel="stylesheet" type="text/css" media="screen">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+.fluig-card-header img {
+    max-height: 56px;
+}
+.fluig-card-header {
+    text-align: center;
+    padding: 2rem 1.25rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.box01{
+	padding:50px;
+}
+.botaoCor{
+	background-color: #55eb8f;
+	color: #FFF;
+	font-weight: bold;
+	padding: 10px 50px;
+	margin-top: 20px;
+	margin-left: 25%;
+	margin-bottom: 20px;
+}
+.container{
+	padding: 30px;
+}
+</style>
+	<div class="box01">
+	</div>
+	<div style="overflow: hidden; height: 1150; width: auto;">
+		<div class="fluig-card-header">
+			<img class="logo" src="https://fluig.sidi.org.br/portal/api/servlet/image/01/custom/logo_image_login.png">
+		</div>
+
+		<div style="background-color:#FFF; color:#111;" class="container">
+
+			<form role="form" class="form-group" method="post"> <!-- action="< ?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"-->
+				
+				<span class="error"> <!--?php echo $emailErr;?--></span><br>
+				<div class=" ">
+					<input type="text" class="form-control " placeholder="Login" name="nome"><br>
+				</div>
+
+				<span class="error"> <!--?php echo $nomeErr;?--></span><br>
+				<div class=" ">
+					<input type="password" class="form-control" placeholder="Password" name="password"><br>
+				</div>
+				
+				<span class="">
+					<button type="submit" name="submit" class="btn btn-lg  arredondar botaoCor" type="submit">
+						Connect
+					</button>
+				</span> <br>
+			</form>
+			
+			<div class="panel panel-collapse" style="background-color:#eee; color:#111;">
+					<!--?php
+					//codigo ACERTOU
+					$nome = $_POST["nome"];
+					$email = $_POST["email"];
+					$telefone = $_POST["telefone"];
+					$mensagem = $_POST["mensagem"];
+			
+					//Define o remetente É A PESSOA QUE VAI RECEBER o FEEDBACK
+					$mail->SetFrom('diogo@marso.saude.ws', $nome); //Seu e-mail  CADASTRADO DE FEEDBACK 
+
+					$mail->AddReplyTo($email, $nome); //Seu EMAIL DO CLIENTE ==============================
+					$mail->Subject = 'Site Nova Era - Fale Conosco: mensagem de '.$nome;//Assunto do e-mail TÍTULO
+					$mail->AddAddress('diogo@marso.saude.ws', 'Teste Locaweb');     //Define os destinatário(s)
+					//Campos abaixo são opcionais 
+					//=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+					//$mail->AddCC('destinarario@dominio.com.br', 'Destinatario'); // Copia
+					//$mail->AddBCC('destinatario_oculto@dominio.com.br', 'Destinatario2`'); // Cópia Oculta
+					//$mail->AddAttachment('images/phpmailer.gif');      // Adicionar um anexo
+					$mail->MsgHTML('Oi,<br><br> '.$mensagem.'<br>Att.,<br><br>'.$telefone.'<br>'.$email.'<br>'.$nome);      //Define o corpo do email
+					////Caso queira colocar o conteudo de um arquivo utilize o método abaixo ao invés da mensagem no corpo do e-mail.
+					//$mail->MsgHTML(file_get_contents('arquivo.html'));
+					$mail->Send();
+					echo "Mensagem enviada com sucesso</p>\n";
+					//caso apresente algum erro é apresentado abaixo com essa exceção.
+					}catch (phpmailerException $e) {
+					//echo $e->errorMessage(); //Mensagem de erro costumizada do PHPMailer
+						echo "Coloque um e-mail correto.";
+					}
+				?-->
+			</div>
+		</div>
+	</div>
+</html>
